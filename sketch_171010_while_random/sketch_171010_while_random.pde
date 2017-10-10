@@ -12,6 +12,6 @@ strokeWeight(5);
 
 while( x < width){
   ellipse(x, y, 100, 100);
-  x += random(10,50);
-  y += random(10,50);
+  x += random(10,40);
+  y += random(10,30);
 }
