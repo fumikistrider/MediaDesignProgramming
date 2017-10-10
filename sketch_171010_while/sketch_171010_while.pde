@@ -13,8 +13,3 @@ while( var < 400){
   ellipse(var, var, 100, 100);
   var += 50;
 }
-
-stroke(0,0,0,127);
-line(50,50,350,350);
-
-
