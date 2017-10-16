@@ -10,6 +10,37 @@ for ( int i = 0; i < max; i++ ) {
 
 - for( 変数の宣言 ; ループの継続する条件; 変数の更新 )
 
+## while と for の比較
+
+- whileを使った場合
+```Java
+size(800,600);
+smooth();
+background(255);
+
+int x = 0;
+
+while( x < width ){
+  stroke(random(255), random(255), random(255));
+  line(x, 0, x, height);
+  x++;
+}
+```
+
+- 同じものをforを使った場合
+```Java
+size(800,600);
+smooth();
+background(255);
+
+for( int x = 0; x < width; x++){
+  stroke(random(255), random(255), random(255));
+  line(x, 0, x, height);  
+}
+```
+
+違いを見比べてみよう
+
 ## 変数の有効範囲
 
 ```Java
