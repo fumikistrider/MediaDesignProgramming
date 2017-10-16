@@ -1,1 +1,5 @@
-# MediaDesignProgramming
+# ループのつくりかた
+
+## for を使った繰り返し
+
+
