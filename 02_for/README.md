@@ -3,8 +3,9 @@
 ## for を使った繰り返し
 
 ```Java
-for ( int i = 0; i < max; i++ ) { 
+for ( int i = 0; i < 100; i++ ) {
   // 繰り返す処理を書きます
+  // 100回　繰り返されます
 }
 ```
 
@@ -48,7 +49,7 @@ int y = 200;   // 変数 y はどこでも有効です
 
 for( int x = 0; x < 400; x += 5 ){
   // 変数 x は、 forの{ から } の間で有効です
-  
+
   ellipse( x, y, 50, 50);  // 正しく動作します
 }
 
@@ -68,9 +69,9 @@ for( int x = 0; x < width; x+=50 ){ // 一つ目のループです
   for( int y = 0; y < height;  y+=50){ // 二つ目のループです
 
     ellipse(x, y, 50, 50);
-    
+
   }
-  
+
 }
 ```
 
@@ -123,13 +124,10 @@ colorMode(HSB, width, height, 100);
 
 for( int x = 0; x <= width; x += 25){
   for(int y = 0; y <= height; y += 25){
-    
+
     fill(x, y, 100);
     rect(x, y, 25, 25);
 
   }
 }
 ```
-
-
-
