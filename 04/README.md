@@ -129,3 +129,73 @@ void draw(){
  - オブジェクトを大量生産して、同時に様々な動きをさせます
  - ArrayListクラスを使って、Spinnerオブジェクトの配列（Array)を作成します
  - ArrayListは、同時にたくさんのオブジェクトを管理する「いれもの」となるオブジェクトです。
+
+
+## オブジェクトに画像を表示できるようにする
+
+```Java
+class Spinner{
+
+  int x;
+  int y;
+  int r;
+  PImage img;
+
+  Spinner(){
+    img = loadImage("wheel.png");
+  }
+
+///// 中略 /////
+
+  void drawImage(){
+    pushMatrix();
+    translate(x,y);
+    rotate(radians(r));
+    fill(255);
+    imageMode(CENTER);
+    image(img,0,0,100,100);
+    popMatrix();
+    r++;
+  }
+
+}
+```
+
+### オブジェクトを作るクラスに画像を属性として追加します
+```Java
+PImage img;
+```
+### 関数を追加して、オブジェクトの生成時に画像ファイルを読み込むようにします（コンストラクタといいます）
+
+```Java
+Spinner(){
+  img = loadImage("wheel.png");
+}
+```
+
+### 四角のかわりに画像を表示する関数 drawImage を追加します
+```Java
+void drawImage(){
+  pushMatrix();
+  translate(x,y);
+  rotate(radians(r));
+  fill(255);
+  imageMode(CENTER);
+  image(img,0,0,100,100);
+  popMatrix();
+  r++;
+}
+```
+### 呼び出すオブジェクトの関数を drawImage に修正します
+
+```Java
+void draw(){
+
+  background(127);
+
+  for(int i = 0; i < number; i++){
+    spArray.get(i).drawImage();
+  }
+
+}
+```
