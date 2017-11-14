@@ -33,6 +33,6 @@ void setup(){
 void draw(){
 
   background(127);
-  sp.drawRect(); 
+  sp.drawRect();
 
 }

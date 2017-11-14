@@ -51,6 +51,7 @@ class Particle{
   }
 
   void drawParticle(){
+    noStroke();
     fill(0,0,255,200);
     ellipse(x,y,10,10);
   }
@@ -136,6 +137,7 @@ class Particle{
   }
 
   void drawParticle(){
+    noStroke();
     fill(0,0,255,200);
     ellipse(x,y,10,10);
 
