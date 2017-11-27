@@ -8,7 +8,7 @@ class Particle{
   Particle(float _x, float _y){  // <-  コンストラクタ（クラスメイト同じ名前の関数にする）
     location = new PVector(_x, _y);
     velocity = new PVector(0,0);
-    acceleration = new PVector(-0.002, 0.02);
+    acceleration = new PVector(random(-0.02, 0.02), random(-0.02, 0.02));
     topspeed = 10;
   }
 
@@ -22,7 +22,7 @@ class Particle{
     PVector mouse = new PVector(mouseX,mouseY);
     PVector dir = PVector.sub(mouse,location);
     dir.normalize();
-    acceleration = dir;
+    acceleration = dir.mult(0.5);
 
     velocity.add(acceleration);
     velocity.limit(topspeed);
@@ -37,15 +37,15 @@ class Particle{
 
   void checkEdges() {
     if (location.x > width) {
-      location.x = 0;
+      velocity.x = -0.5 * velocity.x;
     } else if (location.x < 0) {
-      location.x = width;
+      velocity.x = -0.5 * velocity.x;
     }
 
     if (location.y > height) {
-      location.y = 0;
+      velocity.y = -0.5 * velocity.y;
     } else if (location.y < 0) {
-      location.y = height;
+      velocity.y = -0.5 * velocity.y;
     }
   }
 
