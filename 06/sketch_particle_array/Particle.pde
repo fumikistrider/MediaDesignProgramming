@@ -22,8 +22,9 @@ class Particle{
     PVector mouse = new PVector(mouseX,mouseY);
     PVector dir = PVector.sub(mouse,location);
     dir.normalize();
-    acceleration = dir.mult(0.5);
-
+    dir.mult(0.5);
+    acceleration = dir;
+    
     velocity.add(acceleration);
     velocity.limit(topspeed);
     location.add(velocity);
