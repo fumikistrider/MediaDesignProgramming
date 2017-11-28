@@ -121,3 +121,66 @@ void draw(){
   p.display();
 }
 ~~~
+
+## パーティクルがマウスを追いかけるようにしてみる
+
+- update関数と別に、updateTrack関数を作ってみます
+
+- マウスの現在位置ベクトルとパーティクルの現在位置ベクトルの引き算をして、移動ベクトルを計算します。
+
+- 加速度に、移動ベクトルを入れます。
+
+- 移動ベクトルを正規化して、大きさを「１」にします。
+　ベクトルの掛け算をして、速度を調節します。
+
+
+~~~Java
+void updateTrack(){
+  PVector mouse = new PVector(mouseX,mouseY);
+  PVector dir = PVector.sub(mouse,location);
+  dir.normalize();
+  acceleration = dir.mult(0.5);
+
+  velocity.add(acceleration);
+  velocity.limit(topspeed);
+  location.add(velocity);
+}
+~~~
+
+
+
+## PVector化した複数のパーティクルを扱う
+
+- ArrayListを使って、複数のパーティクルを同時に動かしてみます
+
+- マウスを押すと、パーティクルが追加されるようにします
+
+~~~Java
+ArrayList<Particle> particles;
+
+void setup(){
+  size(800,600);
+  // ArrayList
+  particles = new ArrayList<Particle>();
+  // Particle
+  Particle p = new Particle(width/2, height /2);
+
+  particles.add(p);
+}
+
+void draw(){
+  background(255);
+
+  for(int i = 0; i < particles.size(); i++){
+    particles.get(i).updateTrack();
+    particles.get(i).checkEdges();
+    particles.get(i).display();
+  }
+
+}
+
+void mousePressed(){
+  Particle p = new Particle(random(width), random(height));
+  particles.add(p);
+}
+~~~
