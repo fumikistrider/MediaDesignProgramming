@@ -1,4 +1,3 @@
-
 PVector location;
 PVector velocity;
 
@@ -19,7 +18,6 @@ void draw() {
   if ((location.y > height) || (location.y < 0)) {
     velocity.y = velocity.y * -1;
   }
-
 
   stroke(0);
   fill(175);
