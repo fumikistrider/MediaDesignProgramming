@@ -14,7 +14,7 @@
 ## Box2Dを使うためには
 
  - ライブラリをダウンロードします。
- - [https://github.com/shiffman/Box2D-for-Processing](https://github.com/shiffman/Box2D-for-Processing "Box2D")
+ - [http://www.shiffman.net/p5/libraries/box2d_processing/box2d_processing.zip](http://www.shiffman.net/p5/libraries/box2d_processing/box2d_processing.zip "Box2D")
 
  - Processingのライブラリフォルダにダウンロードしたファイルをコピーします
  - Processingを起動します。
